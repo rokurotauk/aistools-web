@@ -10,7 +10,7 @@ from folium.plugins import HeatMap
 from streamlit_folium import st_folium
 
 def render_visualisation_tab():
-    st.title("AIS Map Visualisation App")
+    st.title('🗺️ AIS Map Visualisation')
     COLOR_CYCLE = itertools.cycle(['red', 'blue', 'green', 'orange', 'purple', 'darkred',
                                    'lightblue', 'darkgreen', 'cadetblue', 'pink', 'black', 'gray',
                                    'lightgreen', 'beige', 'lightgray', 'darkblue', 'lightred'])

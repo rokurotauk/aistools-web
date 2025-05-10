@@ -1,73 +1,59 @@
 # AIS Web App
 
-This web application provides two main functionalities:
-1. **Decode raw AIS messages** from timestamped NMEA logs.
-2. **Visualise AIS data** as vessel positions or heatmaps on an interactive map.
-
-Built using [Streamlit](https://streamlit.io), [pyais](https://github.com/M0r13n/pyais), [Folium](https://python-visualization.github.io/folium/), and [Geopandas](https://geopandas.org/).
+A multi-tab Streamlit app for decoding, validating, visualising, and managing AIS (Automatic Identification System) messages.
 
 ---
 
-## 📦 Features
+## 🔧 Features
 
-### 🧭 Decoder Tab
-- Upload raw AIS logs (each line: `timestamp NMEA`)
-- Choose output format:
-  - Raw `pyais` decoded string
-  - CSV field values
-  - Visualisation format (`mmsi, latitude, longitude, timestamp`)
-- Download decoded results (all, valid only, or errors only)
-- Supports multi-part messages (e.g., type 5)
+### 🧭 Decode AIS Messages
+- Upload timestamped AIS logs
+- Choose output format (raw string, CSV fields, or visualisation-friendly)
+- Export decoded messages (all, valid only, or errors only)
 
-### 🗺️ Visualisation Tab
-- Upload CSV files (decoded AIS data)
-- Visualise by:
-  - Vessel positions (with optional trails)
-  - Heatmap mode
-- Add:
-  - Points of interest (POI CSV)
-  - Shapefiles (ZIP format)
+### ✅ AIS Checksum Validator
+- Upload AIS logs (with or without timestamps)
+- Validates NMEA checksums
+- Displays only invalid messages
+- Exports invalid messages with timestamps
 
----
+### 🗺️ AIS Map Visualisation
+- Upload decoded AIS CSVs
+- View vessel positions or heatmaps
+- Optional trails, POIs, shapefiles
 
-## 🚀 Deployment (Streamlit Cloud)
-
-1. Push this repo to [GitHub](https://github.com)
-2. Go to [streamlit.io/cloud](https://streamlit.io/cloud)
-3. Click "New app" and link your repo
-4. Set **main file** to `app.py`
-5. Done! Your app will be deployed live.
+### ✉️ Encode AIS Messages *(coming soon)*  
+### ⏯️ AIS Replay *(coming soon)*  
+### 📈 AIS Jump Detector *(coming soon)*  
+### 🔍 AIS MMSI Extractor *(coming soon)*  
 
 ---
 
-## 📁 File Structure
+## 🚀 How to Run
 
-```
-app.py                  # Main app entry point
-decoder_tab.py          # AIS decoding functionality
-visualisation_tab.py    # Map visualisation logic
-requirements.txt        # Python dependencies
-README.md               # This file
-```
-
----
-
-## 🛠 Requirements
-
-Install locally with:
+Install dependencies:
 ```bash
 pip install -r requirements.txt
+```
+
+Launch app:
+```bash
 streamlit run app.py
 ```
 
 ---
 
-## 📄 Sample Data
+## 📁 Project Structure
 
-You can use the included `sample_ais_positions.csv` to test the visualisation tab.
-
----
-
-## 🔐 License
-
-MIT License.
+```
+app.py                     # Main entry point
+decoder_tab.py             # Decoder functionality
+checksum_tab.py            # Checksum validator logic
+visualisation_tab.py       # Mapping logic
+encoder_tab.py             # Placeholder
+replay_tab.py              # Placeholder
+jump_detector_tab.py       # Placeholder
+mmsi_extractor_tab.py      # Placeholder
+requirements.txt           # Python dependencies
+README.md                  # This file
+```

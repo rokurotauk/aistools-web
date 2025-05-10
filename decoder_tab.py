@@ -5,6 +5,7 @@ from datetime import datetime
 from pyais import NMEAMessage
 
 def render_decoder_tab():
+    st.title('🧭 Decode AIS Messages')
     def convert_timestamp(epoch_timestamp):
         try:
             dt_object = datetime.utcfromtimestamp(float(epoch_timestamp))
